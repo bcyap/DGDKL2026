@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Application Status | TrackMyApplication</title>
+  <meta
+    name="description"
+    content="View your job application confirmation, current stage, next steps, and activity history."
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="site-brand">
+        <span class="site-brand-icon" aria-hidden="true">✓</span>
+        <span>TrackMyApplication</span>
+      </a>
+      <button
+        type="button"
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        Menu
+      </button>
+      <nav id="primary-navigation" class="site-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Look Up</a></li>
+          <li><a href="status.html" aria-current="page">Application Status</a></li>
+          <li><a href="help.html">Stages &amp; Help</a></li>
+          <li><a href="contact.html">Contact Team</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <h1>Your application status</h1>
+    <p class="lead">
+      See where your application stands today and whether you need to take any action.
+    </p>
+
+    <div id="status-page-container" aria-live="polite">
+      <noscript>
+        <div class="alert-box alert-warning">
+          <p>Please enable JavaScript in your browser to view your application status details.</p>
+        </div>
+      </noscript>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p style="margin-bottom: 0;">
+        <strong>TrackMyApplication</strong> — Clear, honest updates for every job candidate.
+      </p>
+      <nav aria-label="Footer navigation">
+        <ul class="footer-nav">
+          <li><a href="index.html">Look Up</a></li>
+          <li><a href="status.html">Application Status</a></li>
+          <li><a href="help.html">Stages &amp; Help</a></li>
+          <li><a href="contact.html">Contact Team</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

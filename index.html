@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Look Up Your Application | TrackMyApplication</title>
+  <meta
+    name="description"
+    content="Check whether your job application was received, see what stage it is at right now, and find out if you need to do anything next."
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="site-brand">
+        <span class="site-brand-icon" aria-hidden="true">✓</span>
+        <span>TrackMyApplication</span>
+      </a>
+      <button
+        type="button"
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        Menu
+      </button>
+      <nav id="primary-navigation" class="site-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Look Up</a></li>
+          <li><a href="status.html">Application Status</a></li>
+          <li><a href="help.html">Stages &amp; Help</a></li>
+          <li><a href="contact.html">Contact Team</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <h1>Track your job application</h1>
+    <p class="lead">
+      Confirm that your application arrived safely, see which stage it has reached, and know right away whether we need anything from you.
+    </p>
+
+    <!-- Lookup Form Card -->
+    <section class="card" aria-labelledby="lookup-heading">
+      <h2 id="lookup-heading">Enter your application details</h2>
+      <p>
+        Use the reference code from your confirmation email along with the email address you applied with.
+      </p>
+
+      <div
+        id="lookup-form-alert"
+        class="alert-box alert-error"
+        role="alert"
+        aria-live="assertive"
+        hidden
+      ></div>
+
+      <form id="lookup-form" action="status.html" method="get" novalidate>
+        <div class="form-group">
+          <label for="app-ref" class="form-label">Application reference</label>
+          <span id="app-ref-hint" class="form-hint">
+            Format: APP- followed by 4 digits, for example <strong>APP-1042</strong>.
+          </span>
+          <input
+            type="text"
+            id="app-ref"
+            name="ref"
+            class="form-input"
+            autocomplete="off"
+            placeholder="e.g. APP-1042"
+            aria-describedby="app-ref-hint app-ref-error"
+            aria-invalid="false"
+            required
+          />
+          <span id="app-ref-error" class="field-error" role="alert" hidden></span>
+        </div>
+
+        <div class="form-group">
+          <label for="app-email" class="form-label">Email address</label>
+          <span id="app-email-hint" class="form-hint">
+            Enter the same email address you used on your job application.
+          </span>
+          <input
+            type="email"
+            id="app-email"
+            name="email"
+            class="form-input"
+            autocomplete="email"
+            placeholder="e.g. alex.rivera@example.com"
+            aria-describedby="app-email-hint app-email-error"
+            aria-invalid="false"
+            required
+          />
+          <span id="app-email-error" class="field-error" role="alert" hidden></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          Check application status
+        </button>
+      </form>
+    </section>
+
+    <!-- Demo References for Testing -->
+    <section class="panel-subtle" aria-labelledby="demo-heading">
+      <h2 id="demo-heading">Demo applications for testing</h2>
+      <p>
+        Select <strong>Fill form</strong> to copy a sample candidate into the form above, or open their status page directly:
+      </p>
+
+      <ul class="demo-list">
+        <li class="demo-item">
+          <div class="demo-meta">
+            <div>
+              <span class="demo-code">APP-1042</span> &bull;
+              <strong>alex.rivera@example.com</strong>
+            </div>
+            <div>Stage: <strong>Interview (Action needed: pick a slot by 18 Nov)</strong></div>
+          </div>
+          <div class="demo-actions">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-fill-ref="APP-1042"
+              data-fill-email="alex.rivera@example.com"
+            >
+              Fill form
+            </button>
+            <a href="status.html?ref=APP-1042" class="btn btn-primary">View status</a>
+          </div>
+        </li>
+
+        <li class="demo-item">
+          <div class="demo-meta">
+            <div>
+              <span class="demo-code">APP-1015</span> &bull;
+              <strong>priya.nair@example.com</strong>
+            </div>
+            <div>Stage: <strong>Received (Just received, no action needed)</strong></div>
+          </div>
+          <div class="demo-actions">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-fill-ref="APP-1015"
+              data-fill-email="priya.nair@example.com"
+            >
+              Fill form
+            </button>
+            <a href="status.html?ref=APP-1015" class="btn btn-primary">View status</a>
+          </div>
+        </li>
+
+        <li class="demo-item">
+          <div class="demo-meta">
+            <div>
+              <span class="demo-code">APP-1029</span> &bull;
+              <strong>marcus.chen@example.com</strong>
+            </div>
+            <div>Stage: <strong>Under review (No action needed, reply date given)</strong></div>
+          </div>
+          <div class="demo-actions">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-fill-ref="APP-1029"
+              data-fill-email="marcus.chen@example.com"
+            >
+              Fill form
+            </button>
+            <a href="status.html?ref=APP-1029" class="btn btn-primary">View status</a>
+          </div>
+        </li>
+
+        <li class="demo-item">
+          <div class="demo-meta">
+            <div>
+              <span class="demo-code">APP-1064</span> &bull;
+              <strong>samira.hassan@example.com</strong>
+            </div>
+            <div>Stage: <strong>Decision (Panel finalizing outcome)</strong></div>
+          </div>
+          <div class="demo-actions">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-fill-ref="APP-1064"
+              data-fill-email="samira.hassan@example.com"
+            >
+              Fill form
+            </button>
+            <a href="status.html?ref=APP-1064" class="btn btn-primary">View status</a>
+          </div>
+        </li>
+
+        <li class="demo-item">
+          <div class="demo-meta">
+            <div>
+              <span class="demo-code">APP-1088</span> &bull;
+              <strong>david.okafor@example.com</strong>
+            </div>
+            <div>Stage: <strong>Outcome (Unsuccessful, worded respectfully)</strong></div>
+          </div>
+          <div class="demo-actions">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-fill-ref="APP-1088"
+              data-fill-email="david.okafor@example.com"
+            >
+              Fill form
+            </button>
+            <a href="status.html?ref=APP-1088" class="btn btn-primary">View status</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p style="margin-bottom: 0;">
+        <strong>TrackMyApplication</strong> — Clear, honest updates for every job candidate.
+      </p>
+      <nav aria-label="Footer navigation">
+        <ul class="footer-nav">
+          <li><a href="index.html">Look Up</a></li>
+          <li><a href="status.html">Application Status</a></li>
+          <li><a href="help.html">Stages &amp; Help</a></li>
+          <li><a href="contact.html">Contact Team</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
